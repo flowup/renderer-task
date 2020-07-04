@@ -1,0 +1,30 @@
+<h1>Practical Assignment</h1>
+<p>The goal of this practical assignment is to implement a small rich-text renderer which takes JSON input and produces HTML output. The JSON-based input format has been customly designed for this assignment and it is one of your tasks to infer its schema and comprehend its semantics.</p>
+<h2>Your Tasks</h2>
+<ol style="list-style-type: decimal">
+<li>Take a brief look at the JSON in the "input" section of this playground and compare it to the expected output (this text). Feel free to toggle between the expected HTML and its visual preview.</li>
+<li>A short, informal specification of the input format follows. Make sure to read it thoroughly.</li>
+<li>Design a sensible TypeScript typing for the input format. Write all of the type definitions into "/src/render.ts". Try to cover all of the specified restrictions; make use of the newly-gained knowledge of advanced typing features.</li>
+<li>Implement the body of the "render()" function so that it produces (more-or-less) the same output as you are reading right now.</li>
+</ol>
+<h2>Input Format</h2>
+<p>The input JSON represents the content of an article as an array of blocks. There are 3 types of blocks: headings, paragraphs and lists. Each block carries its type (for easy differentiation) along with other properties.</p>
+<h3>Headings</h3>
+<p>A heading is characterized by:</p>
+<ul>
+<li>its text content – an arbitrary string;</li>
+<li>a level – an integer between 1 and 6 (inclusive).</li>
+</ul>
+<h3>Paragraphs</h3>
+<p>A paragraph only has a text content (again, an arbitrary string).</p>
+<h3>Lists</h3>
+<p>Each list carries:</p>
+<ul>
+<li>an array of items (arbitrary strings);</li>
+<li>a flag denoting whether it is ordered (numbered) or unordered (bulleted).</li>
+</ul>
+<p>An addition to that, every ordered list (and no unordered one) has 1 of 2 numberings:</p>
+<ol style="list-style-type: lower-alpha">
+<li>numeric;</li>
+<li>alphabetic.</li>
+</ol>

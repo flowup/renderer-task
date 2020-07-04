@@ -1,0 +1,147 @@
+:root {
+  --tile-spacing: 20px;
+  --app-background: #555555;
+  --tile-background: #222222;
+  --border-style: 1px solid #999999;
+  --font-style: 15px sans-serif;
+  --font-color: #cccccc;
+  --tile-title-style: bold 30px sans-serif;
+  --tile-title-opacity: 0.3;
+  --scrollbar-width: 6px;
+  --scrollbar-color: #555555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border: 1px solid var(--tile-background);
+}
+
+body,
+html {
+  height: 100%;
+  font: var(--font-style);
+  color: var(--font-color);
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--app-background);
+  padding: var(--tile-spacing);
+}
+
+.toolbar {
+  flex: 0 0 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--border-style);
+  background-color: var(--tile-background);
+}
+
+.preview-toggle {
+  user-select: none;
+}
+
+.preview-toggle * {
+  cursor: pointer;
+}
+
+.content {
+  flex-basis: 100%;
+  padding-top: var(--tile-spacing);
+  display: flex;
+  overflow: hidden;
+}
+
+.tile {
+  flex-basis: 100%;
+  overflow: hidden;
+  border: var(--border-style);
+  background-color: var(--tile-background);
+  height: 100%;
+  position: relative;
+}
+
+.tile:not(:first-child) {
+  margin-left: var(--tile-spacing);
+}
+
+.tile-title {
+  position: absolute;
+  top: var(--tile-spacing);
+  right: var(--tile-spacing);
+  display: flex;
+  align-items: center;
+  user-select: none;
+  opacity: var(--tile-title-opacity);
+  transition: opacity 200ms;
+}
+
+.tile:hover .tile-title {
+  opacity: 0;
+}
+
+.tile-title-text {
+  font-weight: bold;
+  text-transform: uppercase;
+  font: var(--tile-title-style);
+  line-height: 1;
+  color: #ffffff;
+  display: block;
+}
+
+.tile-title-icon {
+  margin-left: 10px;
+}
+
+.code {
+  white-space: pre-wrap;
+  padding: var(--tile-spacing);
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.previews-shown .code:not(.persistent) {
+  display: none;
+}
+
+.preview {
+  display: none;
+}
+
+.preview > * {
+  margin-bottom: 15px;
+}
+
+.preview p {
+  line-height: 1.2;
+}
+
+.preview li {
+  list-style-position: inside;
+  margin: 0 0 8px 20px;
+}
+
+.preview li:last-child {
+  margin-bottom: 0;
+}
+
+.previews-shown .preview {
+  display: block;
+  padding: var(--tile-spacing);
+  height: 100%;
+  overflow-y: scroll;
+}

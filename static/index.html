@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Renderer Task</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="bundle.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <div class="toolbar">
+        <span class="preview-toggle">
+          <input type="checkbox" id="preview-toggle" />
+          <label for="preview-toggle">toggle preview</label>
+        </span>
+      </div>
+      <div class="content">
+        <div class="tile">
+          <div class="tile-title">
+            <span class="tile-title-text">given</span>
+            <img src="input.svg" class="tile-title-icon" />
+          </div>
+          <pre class="code persistent" id="input-json"></pre>
+        </div>
+        <div class="tile">
+          <div class="tile-title">
+            <span class="tile-title-text">your</span>
+            <img src="output.svg" class="tile-title-icon" />
+          </div>
+          <pre class="code" id="output-html"></pre>
+          <div class="preview" id="output-preview"></div>
+        </div>
+        <div class="tile">
+          <div class="tile-title">
+            <span class="tile-title-text">expected</span>
+            <img src="output.svg" class="tile-title-icon" />
+          </div>
+          <pre class="code" id="expected-html"></pre>
+          <div class="preview" id="expected-preview"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

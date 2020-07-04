@@ -1,0 +1,91 @@
+{
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Practical Assignment"
+    },
+    {
+      "type": "paragraph",
+      "text": "The goal of this practical assignment is to implement a small rich-text renderer which takes JSON input and produces HTML output. The JSON-based input format has been customly designed for this assignment and it is one of your tasks to infer its schema and comprehend its semantics."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Your Tasks"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "numbering": "numeric",
+      "items": [
+        "Take a brief look at the JSON in the \"input\" section of this playground and compare it to the expected output (this text). Feel free to toggle between the expected HTML and its visual preview.",
+        "A short, informal specification of the input format follows. Make sure to read it thoroughly.",
+        "Design a sensible TypeScript typing for the input format. Write all of the type definitions into \"/src/render.ts\". Try to cover all of the specified restrictions; make use of the newly-gained knowledge of advanced typing features.",
+        "Implement the body of the \"render()\" function so that it produces (more-or-less) the same output as you are reading right now."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Input Format"
+    },
+    {
+      "type": "paragraph",
+      "text": "The input JSON represents the content of an article as an array of blocks. There are 3 types of blocks: headings, paragraphs and lists. Each block carries its type (for easy differentiation) along with other properties."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Headings"
+    },
+    {
+      "type": "paragraph",
+      "text": "A heading is characterized by:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "its text content – an arbitrary string;",
+        "a level – an integer between 1 and 6 (inclusive)."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Paragraphs"
+    },
+    {
+      "type": "paragraph",
+      "text": "A paragraph only has a text content (again, an arbitrary string)."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Lists"
+    },
+    {
+      "type": "paragraph",
+      "text": "Each list carries:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "an array of items (arbitrary strings);",
+        "a flag denoting whether it is ordered (numbered) or unordered (bulleted)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "An addition to that, every ordered list (and no unordered one) has 1 of 2 numberings:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "numbering": "alphabetic",
+      "items": ["numeric;", "alphabetic."]
+    }
+  ]
+}
